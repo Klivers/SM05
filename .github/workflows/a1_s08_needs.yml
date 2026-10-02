@@ -2,25 +2,18 @@ name: a1_s08_needs
 on:
  workflow_dispatch:
 jobs:
- imp1:
-  runs-on: ubuntu-latest
-  steps:
-   - run: |
-      sleep 10
-      echo "ok"
+  imp1:
+    runs-on: ubuntu-latest
+    steps:
+     - run: |
+        sleep 10
+        echo "ok"
 
   imp2:
-   runs-on: ubuntu-latest
-   needs: imp1
-   steps:
-     - run: |
-         sleep 10
-         echo "ok2"
+     runs-on: ubuntu-latest
+     needs: imp1
+     steps:
+       - run: |
+           sleep 10
+           echo "ok2"
 
-  imp3:
-    runs-on: ubuntu-latest
-    needs: imp2
-    steps:
-      - run: |
-          sleep 10
-          echo "ok2"
